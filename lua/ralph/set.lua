@@ -1,9 +1,11 @@
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
+vim.opt.relativenumber = true
 
 -- Set highlight on search
 vim.o.hlsearch = false
+vim.opt.incsearch = true
 
 -- Make line numbers default
 vim.wo.number = true
@@ -25,20 +27,12 @@ vim.o.smartcase = true
 vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
 
-
 ---
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
-
-vim.opt.termguicolors = true
-
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
-
-vim.opt.updatetime = 50
-
 vim.opt.colorcolumn = "80"
+
 -- Set colorscheme
 vim.o.termguicolors = true
 vim.o.background = "dark" -- or "light" for light mode

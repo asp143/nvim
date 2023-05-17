@@ -65,11 +65,11 @@ end
 local servers = {
   -- clangd = {},
   -- gopls = {},
+  eslint = {},
   pyright = {},
   rust_analyzer = {},
   tsserver = {},
-
-  sumneko_lua = {
+  lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
@@ -83,8 +83,12 @@ require('neodev').setup()
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+require("rust-tools").setup({
+  server = {
+    on_attach = on_attach
+  }
+})
 
--- Setup mason so it can manage external tooling
 require('mason').setup()
 
 -- Ensure the servers above are installed

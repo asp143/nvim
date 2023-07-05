@@ -55,8 +55,18 @@ return require('packer').startup(function(use)
 
 	-- QOL
 	use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
-	use 'tpope/vim-sleuth'     -- Detect tabstop and shiftwidth automatically
-
+	use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
+	use({
+		"folke/trouble.nvim",
+		config = function()
+			require("trouble").setup {
+				icons = false,
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			}
+		end
+	})
 
 	-- Git
 	use 'tpope/vim-fugitive'

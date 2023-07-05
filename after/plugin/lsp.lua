@@ -5,7 +5,8 @@ lsp.preset("recommended")
 lsp.ensure_installed({
     'tsserver',
     'rust_analyzer',
-    'lua_ls'
+    'lua_ls',
+    'eslint'
 })
 
 -- Fix Undefined global 'vim'
@@ -62,6 +63,9 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
+
+require('mason').setup()
+require('mason-lspconfig').setup()
 
 vim.diagnostic.config({
     virtual_text = true

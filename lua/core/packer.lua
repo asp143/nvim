@@ -21,7 +21,6 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 
 	-- LSP
-
 	use {
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v1.x',
@@ -67,15 +66,15 @@ return require('packer').startup(function(use)
 			}
 		end
 	})
+	use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
 
 	-- Git
 	use 'tpope/vim-fugitive'
-
-
-
+	use 'lewis6991/gitsigns.nvim'
 
 	-- Design
 	use { "ellisonleao/gruvbox.nvim" }
+	use 'nvim-lualine/lualine.nvim' -- Fancier statusline
 
 
 	-- Automatically set up your configuration after cloning packer.nvim

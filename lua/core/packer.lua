@@ -67,6 +67,8 @@ return require('packer').startup(function(use)
 		end
 	})
 	use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
+	use("github/copilot.vim")
+
 
 	-- Git
 	use 'tpope/vim-fugitive'

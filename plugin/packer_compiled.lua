@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/Users/ralph/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/Users/ralph/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/Users/ralph/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",

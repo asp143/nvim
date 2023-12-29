@@ -70,7 +70,9 @@ return require('packer').startup(function(use)
 			}
 		end
 	})
-	use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
+	-- use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
+	use { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }
+
 	use("github/copilot.vim")
 	use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
 

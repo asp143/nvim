@@ -13,6 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 
 require("lazy").setup({
-    spec = "asp143.lazy",
-    change_detection = { notify = false }
+	spec = "asp143.lazy",
+	change_detection = { notify = false }
 })

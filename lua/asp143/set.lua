@@ -40,9 +40,9 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 -- Set colorscheme
-vim.o.termguicolors = true
-vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme gruvbox]])
+-- vim.o.termguicolors = true
+-- vim.o.background = "dark" -- or "light" for light mode
+-- vim.cmd([[colorscheme gruvbox]])
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'

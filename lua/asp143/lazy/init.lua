@@ -2,11 +2,12 @@ return {
 
 	{
 		"nvim-lua/plenary.nvim",
-		name = "plenary"
+		name = "plenary",
 	},
 
 	"github/copilot.vim",
-	'tpope/vim-sleuth',
+	"tpope/vim-sleuth",
+	"hrsh7th/nvim-cmp",
 	-- {
 	-- 	"lukas-reineke/indent-blankline.nvim",
 	-- 	main = "ibl",
@@ -15,5 +16,4 @@ return {
 	-- 		require("ibl").setup()
 	-- 	end
 	-- },
-
 }

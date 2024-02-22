@@ -1,11 +1,9 @@
 return {
-	'mhartington/formatter.nvim',
+	"mhartington/formatter.nvim",
 	config = function()
-		-- Utilities for creating configurations
-		local util = require "formatter.util"
 
 		-- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
-		require("formatter").setup {
+		require("formatter").setup({
 			-- Enable or disable logging
 			logging = true,
 			-- Set the log level
@@ -13,7 +11,7 @@ return {
 			-- All formatter configurations are opt-in
 			filetype = {
 				lua = {
-					require("formatter.filetypes.lua").lua_ls
+					require("formatter.filetypes.lua").stylua,
 				},
 
 				-- Use the special "*" filetype for defining formatter configurations on
@@ -21,10 +19,10 @@ return {
 				["*"] = {
 					-- "formatter.filetypes.any" defines default configurations for any
 					-- filetype
-					require("formatter.filetypes.any").remove_trailing_whitespace
+					require("formatter.filetypes.any").remove_trailing_whitespace,
 				},
 				typescript = {
-					require("formatter.filetypes.typescript").prettier
+					require("formatter.filetypes.typescript").prettier,
 					-- function()
 					-- 	return {
 					-- 		exe = "prettier",
@@ -33,7 +31,7 @@ return {
 					-- 	}
 					-- end
 				},
-			}
-		}
-	end
+			},
+		})
+	end,
 }

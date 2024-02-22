@@ -12,7 +12,7 @@ return {
 		config = function()
 			require("gruvbox").setup({})
 			ColorMyPencils("gruvbox")
-		end
+		end,
 	},
 	{
 		"folke/tokyonight.nvim",
@@ -34,13 +34,13 @@ return {
 				},
 			})
 			-- ColorMyPencils("tokyonight")
-		end
+		end,
 	},
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",
 		config = function()
-			require('rose-pine').setup({})
-		end
+			require("rose-pine").setup({})
+		end,
 	},
 }

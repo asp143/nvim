@@ -25,12 +25,9 @@ vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
 vim.wo.relativenumber = true
 
-
 ---
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
-
-vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
@@ -39,10 +36,10 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
+
 -- Set colorscheme
 vim.o.termguicolors = true
--- vim.o.background = "dark" -- or "light" for light mode
--- vim.cmd([[colorscheme gruvbox]])
+vim.o.background = "dark" -- or "light" for light mode
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'

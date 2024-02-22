@@ -56,6 +56,9 @@ return {
 				lsp_doc_border = false, -- add a border to hover docs and signature help
 			},
 		})
+		vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { default = true })
+		vim.api.nvim_set_hl(0, "NoiceCmdlinePopupTitle", { default = true })
+		vim.api.nvim_set_hl(0, "NoiceCmdlineIcon", { default = true })
 		vim.keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noice Message" })
 		vim.keymap.set("n", "<leader>nh", "<cmd>Noice History<CR>")
 	end,

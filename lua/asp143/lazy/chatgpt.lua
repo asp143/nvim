@@ -4,8 +4,7 @@ return {
 	config = function()
 		local home = vim.fn.expand("$HOME")
 		require("chatgpt").setup({
-			-- api_key_cmd = "gpg --decrypt " .. home .. "/.config/nvim/secret.txt.gpg"
-			api_key_cmd = "bw get notes openai"
+			api_key_cmd = "gpg --decrypt " .. home .. "/.config/nvim/secret.txt.gpg"
 		})
 	end,
 	dependencies = {

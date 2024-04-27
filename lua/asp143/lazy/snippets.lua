@@ -5,16 +5,23 @@ return {
 		version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
 
 		dependencies = { "rafamadriz/friendly-snippets" },
+		build = "make install_jsregexp",
 
 		config = function()
 			local ls = require("luasnip")
 			ls.filetype_extend("javascript", { "jsdoc" })
 
 			--- TODO: What is expand?
-			vim.keymap.set({ "i" }, "<C-s>e", function() ls.expand() end, { silent = true })
+			vim.keymap.set({ "i" }, "<C-s>e", function()
+				ls.expand()
+			end, { silent = true })
 
-			vim.keymap.set({ "i", "s" }, "<C-s>;", function() ls.jump(1) end, { silent = true })
-			vim.keymap.set({ "i", "s" }, "<C-s>,", function() ls.jump(-1) end, { silent = true })
+			vim.keymap.set({ "i", "s" }, "<C-s>;", function()
+				ls.jump(1)
+			end, { silent = true })
+			vim.keymap.set({ "i", "s" }, "<C-s>,", function()
+				ls.jump(-1)
+			end, { silent = true })
 
 			vim.keymap.set({ "i", "s" }, "<C-E>", function()
 				if ls.choice_active() then
@@ -22,5 +29,5 @@ return {
 				end
 			end, { silent = true })
 		end,
-	}
+	},
 }

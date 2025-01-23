@@ -16,13 +16,13 @@ return {
         end,
         desc = "Find files",
       },
-      {
-        "<leader>gs",
-        function()
-          require("telescope.builtin").git_status({})
-        end,
-        desc = "Git status",
-      },
+      -- {
+      --   "<leader>gs",
+      --   function()
+      --     require("telescope.builtin").git_status({})
+      --   end,
+      --   desc = "Git status",
+      -- },
       {
         "<leader>ps",
         function()

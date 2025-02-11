@@ -23,13 +23,13 @@ return {
       --   end,
       --   desc = "Git status",
       -- },
-      {
-        "<leader>ps",
-        function()
-          require("telescope.builtin").grep_string({ search = vim.fn.input("Grep > ") })
-        end,
-        desc = "Grep string",
-      },
+      -- {
+      --   "<leader>ps",
+      --   function()
+      --     require("telescope.builtin").grep_string({ search = vim.fn.input("Grep > ") })
+      --   end,
+      --   desc = "Grep string",
+      -- },
       {
         "<leader>vh",
         function()

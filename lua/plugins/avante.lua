@@ -1,38 +1,61 @@
 return {
   "yetone/avante.nvim",
+  -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
+  -- ⚠️ must add this setting! ! !
+  build = vim.fn.has("win32") ~= 0 and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
+    or "make",
   event = "VeryLazy",
   version = false, -- Never set this value to "*"! Never!
+  ---@module 'avante'
+  ---@type avante.Config
   opts = {
     -- add any opts here
+    -- this file can contain specific instructions for your project
+    instructions_file = "avante.md",
     -- for example
-    provider = "claude",
+    provider = "claude-code",
+    behaviour = {
+      enable_fastapply = true, -- Enable Fast Apply feature
+    },
+    web_search_engine = {
+      provider = "tavily", -- tavily, serpapi, google, kagi, brave, or searxng
+      proxy = nil, -- proxy support, e.g., http://127.0.0.1:7890
+    },
+    acp_providers = {
+      ["claude-code"] = {
+        command = "npx",
+        args = { "@zed-industries/claude-code-acp" },
+        env = {
+          NODE_NO_WARNINGS = "1",
+          ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY"),
+        },
+      },
+    },
     providers = {
       claude = {
         endpoint = "https://api.anthropic.com",
         model = "claude-opus-4-20250514",
+        timeout = 30000, -- Timeout in milliseconds
         extra_request_body = {
           temperature = 0.75,
-          max_tokens = 4096,
+          max_tokens = 20480,
         },
       },
+      moonshot = {
+        endpoint = "https://api.moonshot.ai/v1",
+        model = "kimi-k2-0711-preview",
+        timeout = 30000, -- Timeout in milliseconds
+        extra_request_body = {
+          temperature = 0.75,
+          max_tokens = 32768,
+        },
+      },
+      morph = {
+        model = "morph-v3-large",
+      },
     },
-    system_prompt = function()
-      local hub = require("mcphub").get_hub_instance()
-      return hub and hub:get_active_servers_prompt() or ""
-    end,
-    -- Using function prevents requiring mcphub before it's loaded
-    custom_tools = function()
-      return {
-        require("mcphub.extensions.avante").mcp_tool(),
-      }
-    end,
   },
-  -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-  build = "make",
-  -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
   dependencies = {
-    "nvim-treesitter/nvim-treesitter",
-    "stevearc/dressing.nvim",
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
     --- The below dependencies are optional,
@@ -40,6 +63,8 @@ return {
     "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
     "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
     "ibhagwan/fzf-lua", -- for file_selector provider fzf
+    "stevearc/dressing.nvim", -- for input provider dressing
+    "folke/snacks.nvim", -- for input provider snacks
     "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
     "zbirenbaum/copilot.lua", -- for providers='copilot'
     {

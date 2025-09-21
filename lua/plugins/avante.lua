@@ -30,6 +30,9 @@ return {
       },
     },
     providers = {
+      copilot = {
+        model = "gpt-5-mini",
+      },
       claude = {
         endpoint = "https://api.anthropic.com",
         model = "claude-opus-4-20250514",
@@ -44,8 +47,8 @@ return {
         model = "gpt-5",
         timeout = 30000, -- Timeout in milliseconds
         extra_request_body = {
-          temperature = 0.75,
-          max_tokens = 20480,
+          max_completion_tokens = 4096,
+          temperature = 1,
         },
       },
       moonshot = {

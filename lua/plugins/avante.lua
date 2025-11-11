@@ -11,7 +11,7 @@ return {
     -- this file can contain specific instructions for your project
     instructions_file = "avante.md",
     -- for example
-    provider = "claude-code",
+    provider = "claude",
     behaviour = {
       enable_fastapply = true, -- Enable Fast Apply feature
     },
@@ -35,7 +35,8 @@ return {
       },
       claude = {
         endpoint = "https://api.anthropic.com",
-        model = "claude-sonnet-4-5-20250929",
+        -- model = "claude-sonnet-4-5-20250929",
+        model = "claude-sonnet-4-5",
         timeout = 30000, -- Timeout in milliseconds
         extra_request_body = {
           temperature = 0.75,

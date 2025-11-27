@@ -35,8 +35,7 @@ return {
       },
       claude = {
         endpoint = "https://api.anthropic.com",
-        -- model = "claude-sonnet-4-5-20250929",
-        model = "claude-sonnet-4-5",
+        model = "claude-opus-4-5-20251101",
         timeout = 30000, -- Timeout in milliseconds
         extra_request_body = {
           temperature = 0.75,
@@ -45,7 +44,7 @@ return {
       },
       openai = {
         endpoint = "https://api.openai.com/v1",
-        model = "gpt-5",
+        model = "gpt-5-mini",
         timeout = 30000, -- Timeout in milliseconds
         extra_request_body = {
           max_completion_tokens = 4096,
